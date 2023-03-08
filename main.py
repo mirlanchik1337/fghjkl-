@@ -1,16 +1,18 @@
-import dp as dp
+
+
+
 from aiogram import types, executor, Dispatcher, Bot
 
 import requests
-from aiogram.bot import bot
-from aiogram.dispatcher import storage
 from bs4 import BeautifulSoup
-BOT_TOKEN = "6046162959:AAHaqfhawafwz_YDYSOhs6jCo3Fz61qMpmo"
+
 
 from selenium import webdriver
 
-db = Dispatcher(bot)
-dp = Dispatcher(bot=bot, storage=storage)
+bot = Bot(token='6046162959:AAHaqfhawafwz_YDYSOhs6jCo3Fz61qMpmo')
+dp = Dispatcher(bot)
+
+
 @dp.message_handler(commands=['start'])
 async def begin(massage: types.Message):
     await bot.send_message(massage.chat.id, "hello")
